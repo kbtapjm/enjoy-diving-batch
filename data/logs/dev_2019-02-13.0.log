@@ -1,0 +1,278 @@
+2019-02-13 14:18:01.932 DEBUG 9092 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: ApplicationEnvironmentPreparedEvent
+2019-02-13 14:18:01.997  INFO 9092 --- [restartedMain] kr.co.pjm.diving.batch.Application       : Starting Application on SKCC16D00593 with PID 9092 (C:\cloud\git\enjoy-diving\enjoy-diving-batch\bin started by Administrator in C:\cloud\git\enjoy-diving\enjoy-diving-batch)
+2019-02-13 14:18:01.997 DEBUG 9092 --- [restartedMain] kr.co.pjm.diving.batch.Application       : Running with Spring Boot v1.5.2.RELEASE, Spring v4.3.7.RELEASE
+2019-02-13 14:18:01.997  INFO 9092 --- [restartedMain] kr.co.pjm.diving.batch.Application       : The following profiles are active: dev
+2019-02-13 14:18:02.032 DEBUG 9092 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: ApplicationPreparedEvent
+2019-02-13 14:18:02.033  INFO 9092 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5566b026: startup date [Wed Feb 13 14:18:02 KST 2019]; root of context hierarchy
+2019-02-13 14:18:02.175 DEBUG 9092 --- [background-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2019-02-13 14:18:03.028  INFO 9092 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-13 14:18:03.067  INFO 9092 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-13 14:18:03.324  INFO 9092 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2019-02-13 14:18:03.362  INFO 9092 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2019-02-13 14:18:03.362  INFO 9092 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2019-02-13 14:18:03.364  INFO 9092 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2019-02-13 14:18:03.364  INFO 9092 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.core.env.SystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2019-02-13 14:18:03.364  INFO 9092 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.context.config.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2019-02-13 14:18:03.365  INFO 9092 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.yml]#dev [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2019-02-13 14:18:03.365  INFO 9092 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.yml] [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2019-02-13 14:18:03.365  INFO 9092 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource refresh [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2019-02-13 14:18:03.390  INFO 9092 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-02-13 14:18:03.556  INFO 9092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$764d0ceb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-13 14:18:03.645  INFO 9092 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2019-02-13 14:18:03.648  INFO 9092 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2019-02-13 14:18:03.880  INFO 9092 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8082 (http)
+2019-02-13 14:18:03.889  INFO 9092 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2019-02-13 14:18:03.891  INFO 9092 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2019-02-13 14:18:04.003  INFO 9092 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-13 14:18:04.003  INFO 9092 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1970 ms
+2019-02-13 14:18:04.208  INFO 9092 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-02-13 14:18:04.209  INFO 9092 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-02-13 14:18:04.209  INFO 9092 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-02-13 14:18:04.209  INFO 9092 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-02-13 14:18:04.210  INFO 9092 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-02-13 14:18:04.211  INFO 9092 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-02-13 14:18:04.212  INFO 9092 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'webServlet' to [/h2-console/*]
+2019-02-13 14:18:04.263  INFO 9092 --- [restartedMain] c.u.j.encryptor.DefaultLazyEncryptor     : String Encryptor custom Bean not found with name 'jasyptStringEncryptor'. Initializing Default String Encryptor
+2019-02-13 14:18:04.274  INFO 9092 --- [restartedMain] c.u.j.encryptor.DefaultLazyEncryptor     : String Encryptor custom Bean not found with name 'jasyptStringEncryptor'. Initializing Default String Encryptor
+2019-02-13 14:18:04.275  WARN 9092 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'inMemoryDatabaseShutdownExecutor' defined in class path resource [org/springframework/boot/devtools/autoconfigure/DevToolsDataSourceAutoConfiguration.class]: Unsatisfied dependency expressed through method 'inMemoryDatabaseShutdownExecutor' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Tomcat.class]: Unsatisfied dependency expressed through method 'dataSource' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': Could not bind properties to DataSourceProperties (prefix=spring.datasource, ignoreInvalidFields=false, ignoreUnknownFields=true, ignoreNestedProperties=false); nested exception is java.lang.IllegalStateException: Required Encryption configuration property missing: jasypt.encryptor.password
+2019-02-13 14:18:04.277  INFO 9092 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service Tomcat
+2019-02-13 14:18:04.289  WARN 9092 --- [restartedMain] o.s.boot.SpringApplication               : Error handling failed (Error creating bean with name 'delegatingApplicationListener' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available)
+2019-02-13 14:18:04.298 ERROR 9092 --- [restartedMain] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'inMemoryDatabaseShutdownExecutor' defined in class path resource [org/springframework/boot/devtools/autoconfigure/DevToolsDataSourceAutoConfiguration.class]: Unsatisfied dependency expressed through method 'inMemoryDatabaseShutdownExecutor' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Tomcat.class]: Unsatisfied dependency expressed through method 'dataSource' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': Could not bind properties to DataSourceProperties (prefix=spring.datasource, ignoreInvalidFields=false, ignoreUnknownFields=true, ignoreNestedProperties=false); nested exception is java.lang.IllegalStateException: Required Encryption configuration property missing: jasypt.encryptor.password
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:467)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:296)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1081)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:856)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151)
+	at kr.co.pjm.diving.batch.Application.main(Application.java:9)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Tomcat.class]: Unsatisfied dependency expressed through method 'dataSource' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': Could not bind properties to DataSourceProperties (prefix=spring.datasource, ignoreInvalidFields=false, ignoreUnknownFields=true, ignoreNestedProperties=false); nested exception is java.lang.IllegalStateException: Required Encryption configuration property missing: jasypt.encryptor.password
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:749)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:467)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1173)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1067)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	... 26 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': Could not bind properties to DataSourceProperties (prefix=spring.datasource, ignoreInvalidFields=false, ignoreUnknownFields=true, ignoreNestedProperties=false); nested exception is java.lang.IllegalStateException: Required Encryption configuration property missing: jasypt.encryptor.password
+	at org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.postProcessBeforeInitialization(ConfigurationPropertiesBindingPostProcessor.java:334)
+	at org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.postProcessBeforeInitialization(ConfigurationPropertiesBindingPostProcessor.java:291)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:835)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:741)
+	... 40 common frames omitted
+Caused by: java.lang.IllegalStateException: Required Encryption configuration property missing: jasypt.encryptor.password
+	at com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor.getRequiredProperty(DefaultLazyEncryptor.java:69)
+	at com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor.createDefault(DefaultLazyEncryptor.java:45)
+	at com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor.lambda$null$2(DefaultLazyEncryptor.java:34)
+	at java.util.Optional.orElseGet(Unknown Source)
+	at com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor.lambda$new$3(DefaultLazyEncryptor.java:32)
+	at com.ulisesbocchio.jasyptspringboot.util.Singleton.lambda$new$1(Singleton.java:20)
+	at com.ulisesbocchio.jasyptspringboot.util.Singleton.get(Singleton.java:31)
+	at com.ulisesbocchio.jasyptspringboot.encryptor.DefaultLazyEncryptor.decrypt(DefaultLazyEncryptor.java:81)
+	at com.ulisesbocchio.jasyptspringboot.resolver.DefaultPropertyResolver.resolvePropertyValue(DefaultPropertyResolver.java:35)
+	at com.ulisesbocchio.jasyptspringboot.resolver.DefaultLazyPropertyResolver.resolvePropertyValue(DefaultLazyPropertyResolver.java:41)
+	at com.ulisesbocchio.jasyptspringboot.EncryptablePropertySource.getProperty(EncryptablePropertySource.java:16)
+	at com.ulisesbocchio.jasyptspringboot.wrapper.EncryptableMapPropertySourceWrapper.getProperty(EncryptableMapPropertySourceWrapper.java:29)
+	at org.springframework.boot.bind.PropertySourcesPropertyValues.getEnumerableProperty(PropertySourcesPropertyValues.java:165)
+	at org.springframework.boot.bind.PropertySourcesPropertyValues.processEnumerablePropertySource(PropertySourcesPropertyValues.java:148)
+	at org.springframework.boot.bind.PropertySourcesPropertyValues.processPropertySource(PropertySourcesPropertyValues.java:127)
+	at org.springframework.boot.bind.PropertySourcesPropertyValues.<init>(PropertySourcesPropertyValues.java:117)
+	at org.springframework.boot.bind.PropertiesConfigurationFactory.getPropertySourcesPropertyValues(PropertiesConfigurationFactory.java:316)
+	at org.springframework.boot.bind.PropertiesConfigurationFactory.doBindPropertiesToTarget(PropertiesConfigurationFactory.java:270)
+	at org.springframework.boot.bind.PropertiesConfigurationFactory.bindPropertiesToTarget(PropertiesConfigurationFactory.java:240)
+	at org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.postProcessBeforeInitialization(ConfigurationPropertiesBindingPostProcessor.java:329)
+	... 54 common frames omitted
+
+2019-02-13 14:28:01.699 DEBUG 8900 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: ApplicationEnvironmentPreparedEvent
+2019-02-13 14:28:01.764  INFO 8900 --- [restartedMain] kr.co.pjm.diving.batch.Application       : Starting Application on SKCC16D00593 with PID 8900 (C:\cloud\git\enjoy-diving\enjoy-diving-batch\bin started by Administrator in C:\cloud\git\enjoy-diving\enjoy-diving-batch)
+2019-02-13 14:28:01.765 DEBUG 8900 --- [restartedMain] kr.co.pjm.diving.batch.Application       : Running with Spring Boot v1.5.2.RELEASE, Spring v4.3.7.RELEASE
+2019-02-13 14:28:01.765  INFO 8900 --- [restartedMain] kr.co.pjm.diving.batch.Application       : The following profiles are active: dev
+2019-02-13 14:28:01.807 DEBUG 8900 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: ApplicationPreparedEvent
+2019-02-13 14:28:01.808  INFO 8900 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@47d136c4: startup date [Wed Feb 13 14:28:01 KST 2019]; root of context hierarchy
+2019-02-13 14:28:01.939 DEBUG 8900 --- [background-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2019-02-13 14:28:02.775  INFO 8900 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-13 14:28:02.820  INFO 8900 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-13 14:28:03.121  INFO 8900 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2019-02-13 14:28:03.156  INFO 8900 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2019-02-13 14:28:03.157  INFO 8900 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2019-02-13 14:28:03.158  INFO 8900 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2019-02-13 14:28:03.158  INFO 8900 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.core.env.SystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2019-02-13 14:28:03.158  INFO 8900 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.context.config.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2019-02-13 14:28:03.158  INFO 8900 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.yml]#dev [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2019-02-13 14:28:03.158  INFO 8900 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.yml] [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2019-02-13 14:28:03.159  INFO 8900 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource refresh [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2019-02-13 14:28:03.182  INFO 8900 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-02-13 14:28:03.339  INFO 8900 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9828d735] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-13 14:28:03.433  INFO 8900 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2019-02-13 14:28:03.435  INFO 8900 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2019-02-13 14:28:03.668  INFO 8900 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8082 (http)
+2019-02-13 14:28:03.678  INFO 8900 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2019-02-13 14:28:03.679  INFO 8900 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2019-02-13 14:28:03.814  INFO 8900 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-13 14:28:03.815  INFO 8900 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2007 ms
+2019-02-13 14:28:04.043  INFO 8900 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-02-13 14:28:04.043  INFO 8900 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-02-13 14:28:04.043  INFO 8900 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-02-13 14:28:04.043  INFO 8900 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-02-13 14:28:04.044  INFO 8900 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-02-13 14:28:04.045  INFO 8900 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-02-13 14:28:04.046  INFO 8900 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'webServlet' to [/h2-console/*]
+2019-02-13 14:28:04.101  INFO 8900 --- [restartedMain] c.u.j.encryptor.DefaultLazyEncryptor     : Found Custom Encryptor Bean org.jasypt.encryption.pbe.PooledPBEStringEncryptor@56a600d2 with name: jasyptStringEncryptor
+2019-02-13 14:28:04.537  INFO 8900 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-02-13 14:28:04.550  INFO 8900 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-02-13 14:28:04.637  INFO 8900 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.11.Final}
+2019-02-13 14:28:04.639  INFO 8900 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-02-13 14:28:04.688  INFO 8900 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-02-13 14:28:05.151  INFO 8900 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-02-13 14:28:05.190  INFO 8900 --- [restartedMain] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2019-02-13 14:28:05.539  INFO 8900 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-02-13 14:28:05.853  INFO 8900 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@47d136c4: startup date [Wed Feb 13 14:28:01 KST 2019]; root of context hierarchy
+2019-02-13 14:28:05.891 DEBUG 8900 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: DataSourceInitializedEvent
+2019-02-13 14:28:05.891 DEBUG 8900 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: DataSourceInitializedEvent
+2019-02-13 14:28:05.917  INFO 8900 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-02-13 14:28:05.918  INFO 8900 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-02-13 14:28:05.947  INFO 8900 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-02-13 14:28:05.948  INFO 8900 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-02-13 14:28:05.987  INFO 8900 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-02-13 14:28:06.435  INFO 8900 --- [restartedMain] b.a.s.AuthenticationManagerConfiguration : 
+
+Using default security password: c0685781-e4d6-4b29-bef5-f178dd43b892
+
+2019-02-13 14:28:06.473  INFO 8900 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
+2019-02-13 14:28:06.539  INFO 8900 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.boot.autoconfigure.security.SpringBootWebSecurityConfiguration$ApplicationNoWebSecurityConfigurerAdapter$1@dae7341, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@42f56fde, org.springframework.security.web.context.SecurityContextPersistenceFilter@1d72321c, org.springframework.security.web.header.HeaderWriterFilter@99dd1ee, org.springframework.security.web.csrf.CsrfFilter@1f12840b, org.springframework.security.web.authentication.logout.LogoutFilter@5328740, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2398ce3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@16674691, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@53ecf847, org.springframework.security.web.session.SessionManagementFilter@6e3e72c5, org.springframework.security.web.access.ExceptionTranslationFilter@36d90c3]
+2019-02-13 14:28:06.703  INFO 8900 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-02-13 14:28:06.760  INFO 8900 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-02-13 14:28:06.799 DEBUG 8900 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: ContextRefreshedEvent
+2019-02-13 14:28:06.799 DEBUG 8900 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: ContextRefreshedEvent
+2019-02-13 14:28:06.847  INFO 8900 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8082 (http)
+2019-02-13 14:28:06.848 DEBUG 8900 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: EmbeddedServletContainerInitializedEvent
+2019-02-13 14:28:06.848 DEBUG 8900 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: EmbeddedServletContainerInitializedEvent
+2019-02-13 14:28:06.852 DEBUG 8900 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: ApplicationReadyEvent
+2019-02-13 14:28:06.852 DEBUG 8900 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: ApplicationReadyEvent
+2019-02-13 14:28:06.853  INFO 8900 --- [restartedMain] kr.co.pjm.diving.batch.Application       : Started Application in 5.484 seconds (JVM running for 6.335)
+2019-02-13 14:28:09.121  INFO 8900 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-02-13 14:28:09.122  INFO 8900 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@47d136c4: startup date [Wed Feb 13 14:28:01 KST 2019]; root of context hierarchy
+2019-02-13 14:28:09.123 DEBUG 8900 --- [RMI TCP Connection(2)-127.0.0.1] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: ContextClosedEvent
+2019-02-13 14:28:09.123 DEBUG 8900 --- [RMI TCP Connection(2)-127.0.0.1] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: ContextClosedEvent
+2019-02-13 14:28:09.126  INFO 8900 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2019-02-13 14:28:09.127  INFO 8900 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-02-13 14:38:25.750 DEBUG 22196 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: ApplicationEnvironmentPreparedEvent
+2019-02-13 14:38:25.847  INFO 22196 --- [restartedMain] kr.co.pjm.diving.batch.Application       : Starting Application on SKCC16D00593 with PID 22196 (C:\cloud\git\enjoy-diving\enjoy-diving-batch\bin started by Administrator in C:\cloud\git\enjoy-diving\enjoy-diving-batch)
+2019-02-13 14:38:25.847 DEBUG 22196 --- [restartedMain] kr.co.pjm.diving.batch.Application       : Running with Spring Boot v1.5.2.RELEASE, Spring v4.3.7.RELEASE
+2019-02-13 14:38:25.847  INFO 22196 --- [restartedMain] kr.co.pjm.diving.batch.Application       : The following profiles are active: dev
+2019-02-13 14:38:25.888 DEBUG 22196 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: ApplicationPreparedEvent
+2019-02-13 14:38:25.888  INFO 22196 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@64775914: startup date [Wed Feb 13 14:38:25 KST 2019]; root of context hierarchy
+2019-02-13 14:38:26.071 DEBUG 22196 --- [background-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2019-02-13 14:38:26.921  INFO 22196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-13 14:38:26.957  INFO 22196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-02-13 14:38:27.244  WARN 22196 --- [restartedMain] o.s.c.a.ConfigurationClassEnhancer       : @Bean method ScopeConfiguration.stepScope is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2019-02-13 14:38:27.255  WARN 22196 --- [restartedMain] o.s.c.a.ConfigurationClassEnhancer       : @Bean method ScopeConfiguration.jobScope is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2019-02-13 14:38:27.268  INFO 22196 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2019-02-13 14:38:27.303  INFO 22196 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2019-02-13 14:38:27.303  INFO 22196 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2019-02-13 14:38:27.304  INFO 22196 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2019-02-13 14:38:27.304  INFO 22196 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.core.env.SystemEnvironmentPropertySource] to EncryptableMapPropertySourceWrapper
+2019-02-13 14:38:27.305  INFO 22196 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.context.config.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2019-02-13 14:38:27.305  INFO 22196 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.yml]#dev [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2019-02-13 14:38:27.305  INFO 22196 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.yml] [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2019-02-13 14:38:27.305  INFO 22196 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource refresh [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2019-02-13 14:38:27.331  INFO 22196 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-02-13 14:38:27.501  INFO 22196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b9b92b44] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-13 14:38:27.600  INFO 22196 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2019-02-13 14:38:27.603  INFO 22196 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2019-02-13 14:38:27.844  INFO 22196 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8082 (http)
+2019-02-13 14:38:27.853  INFO 22196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2019-02-13 14:38:27.854  INFO 22196 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.11
+2019-02-13 14:38:27.970  INFO 22196 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-02-13 14:38:27.971  INFO 22196 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2083 ms
+2019-02-13 14:38:28.182  INFO 22196 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-02-13 14:38:28.183  INFO 22196 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-02-13 14:38:28.183  INFO 22196 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-02-13 14:38:28.184  INFO 22196 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-02-13 14:38:28.185  INFO 22196 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-02-13 14:38:28.185  INFO 22196 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2019-02-13 14:38:28.186  INFO 22196 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'webServlet' to [/h2-console/*]
+2019-02-13 14:38:28.243  INFO 22196 --- [restartedMain] c.u.j.encryptor.DefaultLazyEncryptor     : Found Custom Encryptor Bean org.jasypt.encryption.pbe.PooledPBEStringEncryptor@3fa79a53 with name: jasyptStringEncryptor
+2019-02-13 14:38:28.656  INFO 22196 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-02-13 14:38:28.666  INFO 22196 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-02-13 14:38:28.725  INFO 22196 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.11.Final}
+2019-02-13 14:38:28.726  INFO 22196 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-02-13 14:38:28.766  INFO 22196 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-02-13 14:38:29.174  INFO 22196 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-02-13 14:38:29.210  INFO 22196 --- [restartedMain] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2019-02-13 14:38:29.525  INFO 22196 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-02-13 14:38:29.894  INFO 22196 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@64775914: startup date [Wed Feb 13 14:38:25 KST 2019]; root of context hierarchy
+2019-02-13 14:38:29.932 DEBUG 22196 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: DataSourceInitializedEvent
+2019-02-13 14:38:29.932 DEBUG 22196 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: DataSourceInitializedEvent
+2019-02-13 14:38:29.958  INFO 22196 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-02-13 14:38:29.958  INFO 22196 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-02-13 14:38:29.987  INFO 22196 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-02-13 14:38:29.988  INFO 22196 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-02-13 14:38:30.028  INFO 22196 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-02-13 14:38:30.226  WARN 22196 --- [restartedMain] o.s.b.a.batch.BasicBatchConfigurer       : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
+2019-02-13 14:38:30.233  INFO 22196 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
+2019-02-13 14:38:30.326  INFO 22196 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2019-02-13 14:38:30.345  INFO 22196 --- [restartedMain] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [org/springframework/batch/core/schema-mysql.sql]
+2019-02-13 14:38:30.585  INFO 22196 --- [restartedMain] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [org/springframework/batch/core/schema-mysql.sql] in 240 ms.
+2019-02-13 14:38:30.920  INFO 22196 --- [restartedMain] b.a.s.AuthenticationManagerConfiguration : 
+
+Using default security password: d0ae15c4-215a-4f41-b000-9c3ac6c53055
+
+2019-02-13 14:38:30.961  INFO 22196 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
+2019-02-13 14:38:31.022  INFO 22196 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.boot.autoconfigure.security.SpringBootWebSecurityConfiguration$ApplicationNoWebSecurityConfigurerAdapter$1@55dcb4c1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6478c3bc, org.springframework.security.web.context.SecurityContextPersistenceFilter@41dae3a3, org.springframework.security.web.header.HeaderWriterFilter@5f0c2995, org.springframework.security.web.csrf.CsrfFilter@a8408a1, org.springframework.security.web.authentication.logout.LogoutFilter@79d7d337, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@41cfea76, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63b3b27b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2371ea6f, org.springframework.security.web.session.SessionManagementFilter@61b4ecbf, org.springframework.security.web.access.ExceptionTranslationFilter@39e02b66]
+2019-02-13 14:38:31.190  INFO 22196 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-02-13 14:38:31.239  INFO 22196 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-02-13 14:38:31.251 DEBUG 22196 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: ContextRefreshedEvent
+2019-02-13 14:38:31.251 DEBUG 22196 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: ContextRefreshedEvent
+2019-02-13 14:38:31.294  INFO 22196 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8082 (http)
+2019-02-13 14:38:31.295 DEBUG 22196 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: EmbeddedServletContainerInitializedEvent
+2019-02-13 14:38:31.295 DEBUG 22196 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: EmbeddedServletContainerInitializedEvent
+2019-02-13 14:38:31.299  INFO 22196 --- [restartedMain] o.s.b.a.b.JobLauncherCommandLineRunner   : Running default command line with: []
+2019-02-13 14:38:31.300 DEBUG 22196 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: ApplicationReadyEvent
+2019-02-13 14:38:31.300 DEBUG 22196 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Application Event Raised: ApplicationReadyEvent
+2019-02-13 14:38:31.301  INFO 22196 --- [restartedMain] kr.co.pjm.diving.batch.Application       : Started Application in 5.889 seconds (JVM running for 6.724)

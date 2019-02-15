@@ -1,0 +1,42 @@
+description 'enjoy-diving-batch module project'
+
+jar {
+    baseName = 'enjoy-diving-batch'
+    version = '0.0.1-SNAPSHOT'
+}
+
+ext['hibernate.version'] = '5.2.11.Final'
+
+dependencies {
+    compile project(':enjoy-diving-common')
+    
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: "${springBootVersion}"
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: "${springBootVersion}"
+	
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-batch', version: "${springBootVersion}"
+	testCompile group: 'org.springframework.batch', name: 'spring-batch-test', version: "${springBootVersion}"
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: "${springBootVersion}"
+    
+    compile group: 'com.github.ulisesbocchio', name: 'jasypt-spring-boot-starter', version: '1.17'
+    compile group: 'com.google.guava', name: 'guava', version: '20.0'
+    
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+}
+
+task buildDocker(type: Docker, dependsOn: build) {
+    push = true
+    applicationName = jar.baseName
+    dockerfile = file('src/main/docker/Dockerfile')
+    doFirst {
+        copy {
+            from jar
+            into stageDir
+        }
+    }
+}
+
+bootRepackage {
+    mainClass = 'kr.co.pjm.diving.batch.Application'
+}

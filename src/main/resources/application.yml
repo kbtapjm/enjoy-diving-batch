@@ -1,0 +1,116 @@
+server:
+  port: 8082
+  tomcat:
+    uri-encoding: UTF-8
+  error:
+    whitelabel:
+      enabled: false 
+spring:
+  application:
+    name: enjoy-diving-batch
+  output:
+    ansi:
+      enabled: always
+  profiles:
+    active: dev
+  http:
+    encoding:
+      charset: UTF-8    
+security:
+  basic:
+    enabled: false
+
+---
+# local
+spring:
+  profiles: local
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+  datasource:
+    type: org.apache.tomcat.jdbc.pool.DataSource
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:~/diving
+    username: sa
+    password: test
+    initialize: true
+    schema: classpath:database/sql/ddl-*.sql
+    data: classpath:database/sql/dml-*.sql
+
+logging:
+  level:
+    root: DEBUG 
+    org.apache: INFO
+  config: classpath:config/logback-spring.xml
+  file : local
+  path : data/logs
+  
+---  
+
+# dev
+spring:
+  profiles: dev
+  datasource:
+    url: ENC(JhbAOrO9c0MhlBJkcBhM15vkfabBJgxc4dxv+S93sxLPAcCMCjlXIfJFEBvXMNLr)
+    username: ENC(jauxnix93NIxNidJQpxZGQ==)
+    password: ENC(Jbk2+ry3C3T9suJEsBqWow==)
+    driver-class-name: com.mysql.jdbc.Driver
+    sql-script-encoding: UTF-8
+    #schema: classpath:database/sql/ddl-*.sql
+    #data: classpath:database/sql/dml-*.sql
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+         
+logging:
+  level:
+    root: DEBUG 
+    org.apache: INFO
+  config: classpath:config/logback-spring.xml
+  file : dev
+  path : data/logs
+
+
+---  
+
+# stg
+spring:
+  profiles: stg
+  datasource:
+    url: ENC(emifSrvMjU8lObCZdDOAHJTGxu7HeQ2CfsLZO3A6ZUmQmXrxHQzqYEEwC8tI2m0z)
+    username: ENC(jauxnix93NIxNidJQpxZGQ==)
+    password: ENC(Jbk2+ry3C3T9suJEsBqWow==)
+    driver-class-name: com.mysql.jdbc.Driver
+    sql-script-encoding: UTF-8
+    #schema: classpath:database/sql/ddl-*.sql
+    #data: classpath:database/sql/dml-*.sql
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+      
+logging:
+  level:
+    root: DEBUG 
+    org.apache: INFO
+  config: classpath:config/logback-spring.xml
+  file : stg
+  path : data/logs
