@@ -15,7 +15,10 @@ spring:
     active: dev
   http:
     encoding:
-      charset: UTF-8    
+      charset: UTF-8
+#  batch:
+#    job:
+#      names: ${job.name:NONE}
 security:
   basic:
     enabled: false
@@ -44,6 +47,7 @@ logging:
   level:
     root: DEBUG 
     org.apache: INFO
+    org.springframework.batch: DEBUG
   config: classpath:config/logback-spring.xml
   file : local
   path : data/logs
