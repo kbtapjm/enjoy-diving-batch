@@ -9,7 +9,6 @@ import org.springframework.batch.core.configuration.annotation.JobScope;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.ItemWriter;
-import org.springframework.batch.item.database.JpaPagingItemReader;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -39,21 +38,11 @@ public class JpaPagingItemReaderJobConfiguration {
   public Step jpaPagingItemReaderStep() {
       return stepBuilderFactory.get("jpaPagingItemReaderStep")
               .<User, User>chunk(chunkSize)
-              .reader(jpaPagingItemReader())
               .writer(jpaPagingItemWriter())
               .build();
   }
   
-  @Bean
-  @StepScope
-  public JpaPagingItemReader<User> jpaPagingItemReader() {
-      return new JpaPagingItemReaderBuilder<User>()
-              .name("jpaPagingItemReader")
-              .entityManagerFactory(entityManagerFactory)
-              .pageSize(chunkSize)
-              .queryString("SELECT u FROM User u")
-              .build();
-  }
+ 
   
   @Bean
   @StepScope
