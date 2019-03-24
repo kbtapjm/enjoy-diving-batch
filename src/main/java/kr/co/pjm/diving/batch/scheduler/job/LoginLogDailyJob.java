@@ -35,12 +35,6 @@ public class LoginLogDailyJob extends QuartzJobBean implements InterruptableJob 
   private JobLocator jobLocator;
 
   @Override
-  public void interrupt() throws UnableToInterruptJobException {
-    log.info("Stopping thread... ");
-    toStopFlag = false;
-  }
-
-  @Override
   protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
     JobKey key = jobExecutionContext.getJobDetail().getKey();
 
@@ -49,7 +43,7 @@ public class LoginLogDailyJob extends QuartzJobBean implements InterruptableJob 
 
     try {
       JobParameters jobParameters = new JobParametersBuilder()
-          .addString("billingDate", DateUtil.getInstance().getLocalDateToString(1, DateUtil.FORMAT_YYYY_MM_DD))
+          .addString("billingDate", DateUtil.getInstance().getLocalDateToString(3, DateUtil.FORMAT_YYYY_MM_DD))
           .toJobParameters();
 
       Job job = jobLocator.getJob(jobName);
@@ -62,6 +56,12 @@ public class LoginLogDailyJob extends QuartzJobBean implements InterruptableJob 
         | JobInstanceAlreadyCompleteException | JobParametersInvalidException e) {
       e.printStackTrace();
     }
+  }
+  
+  @Override
+  public void interrupt() throws UnableToInterruptJobException {
+    log.info("Stopping thread... ");
+    toStopFlag = false;
   }
 
 }

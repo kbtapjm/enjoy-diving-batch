@@ -16,9 +16,6 @@ spring:
   http:
     encoding:
       charset: UTF-8
-#  batch:
-#    job:
-#      names: ${job.name:NONE}
 security:
   basic:
     enabled: false
@@ -80,7 +77,7 @@ spring:
 logging:
   level:
     root: DEBUG 
-    org.apache: INFO
+    org.apache: DEBUG
   config: classpath:config/logback-spring.xml
   file : dev
   path : data/logs

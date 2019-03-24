@@ -59,9 +59,9 @@ public class QuartzConfiguration {
     map.put("jobLocator", jobLocator);
 
     jobDetailFactoryBean.setJobDataAsMap(map);
-    jobDetailFactoryBean.setGroup("loginLogGroup");
+    jobDetailFactoryBean.setGroup("enjoy-diving-batch");
     jobDetailFactoryBean.setName("loginLogDailyBatchJob");
-    jobDetailFactoryBean.setDescription("");
+    jobDetailFactoryBean.setDescription("loginLogDailyBatchJob");
 
     return jobDetailFactoryBean;
   }
@@ -70,7 +70,7 @@ public class QuartzConfiguration {
   public CronTriggerFactoryBean cronTriggerFactoryBean() {
     CronTriggerFactoryBean cronTriggerFactoryBean = new CronTriggerFactoryBean();
     cronTriggerFactoryBean.setJobDetail(jobDetailFactoryBean().getObject());
-    cronTriggerFactoryBean.setCronExpression("0 28 17 ? * *");
+    cronTriggerFactoryBean.setCronExpression("0 43 15 ? * *");
     cronTriggerFactoryBean.setDescription("loginLogDailyBatchJob CronTriger");
 
     return cronTriggerFactoryBean;
