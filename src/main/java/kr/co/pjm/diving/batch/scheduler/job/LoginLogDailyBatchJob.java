@@ -28,40 +28,40 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Getter
 @Setter
-public class LoginLogDailyJob extends QuartzJobBean implements InterruptableJob {
+public class LoginLogDailyBatchJob extends QuartzJobBean implements InterruptableJob{
   private volatile boolean toStopFlag = true;
   private String jobName;
   private JobLauncher jobLauncher;
   private JobLocator jobLocator;
-
+  
   @Override
   protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
     JobKey key = jobExecutionContext.getJobDetail().getKey();
-
-    log.info("BillingJob Job started with key : " + key.getName() + ", Group :" + key.getGroup() + " "
-        + ", Thread Name :" + Thread.currentThread().getName() + " ,Time now : " + LocalDateTime.now());
-
+    
+    log.info("BillingJob Job started with key : " + key.getName() + ", Group :" + key.getGroup() + " " 
+    + ", Thread Name :" + Thread.currentThread().getName() + " ,Time now : " + LocalDateTime.now());
+    
     try {
       JobParameters jobParameters = new JobParametersBuilder()
-          .addString("billingDate", DateUtil.getInstance().getLocalDateToString(3, DateUtil.FORMAT_YYYY_MM_DD))
+          //.addLong("time", System.currentTimeMillis())
+          .addString("batchDate", DateUtil.getInstance().getLocalDateToString(1, DateUtil.FORMAT_YYYY_MM_DD))
           .toJobParameters();
-
+      
       Job job = jobLocator.getJob(jobName);
-
+      log.info("########### LoginLogDailyBatchJob Name : {} ", job.getName());
       JobExecution jobExecution = jobLauncher.run(job, jobParameters);
+      log.info("########### LoginLogDailyBatchJob Status: {}", jobExecution.getStatus());
 
-      // TODO: 배치 상태를 결과로 받으니깐 결과에 따른 로직 처리
-      log.info("########### Status: {}", jobExecution.getStatus());
-    } catch (NoSuchJobException | JobExecutionAlreadyRunningException | JobRestartException
-        | JobInstanceAlreadyCompleteException | JobParametersInvalidException e) {
+    } catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException
+        | JobParametersInvalidException | NoSuchJobException e) {
       e.printStackTrace();
     }
   }
-  
+
   @Override
   public void interrupt() throws UnableToInterruptJobException {
     log.info("Stopping thread... ");
     toStopFlag = false;
   }
-
+  
 }

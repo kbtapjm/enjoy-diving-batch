@@ -21,7 +21,7 @@ import org.springframework.scheduling.quartz.JobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.scheduling.quartz.SimpleTriggerFactoryBean;
 
-import kr.co.pjm.diving.batch.scheduler.job.LoginLogDailyJob;
+import kr.co.pjm.diving.batch.scheduler.job.LoginLogDailyBatchJob;
 import kr.co.pjm.diving.batch.scheduler.listener.JobsListener;
 import kr.co.pjm.diving.batch.scheduler.listener.TriggerListner;
 
@@ -51,17 +51,16 @@ public class QuartzConfiguration {
   @Bean
   public JobDetailFactoryBean jobDetailFactoryBean() {
     JobDetailFactoryBean jobDetailFactoryBean = new JobDetailFactoryBean();
-    jobDetailFactoryBean.setJobClass(LoginLogDailyJob.class);
-
+    jobDetailFactoryBean.setJobClass(LoginLogDailyBatchJob.class);
     Map<String, Object> map = new HashMap<String, Object>();
-    map.put("jobName", "loginLogDailyJob");
+    map.put("jobName", "loginLogDailBatchJob");
     map.put("jobLauncher", jobLauncher);
     map.put("jobLocator", jobLocator);
 
     jobDetailFactoryBean.setJobDataAsMap(map);
     jobDetailFactoryBean.setGroup("enjoy-diving-batch");
-    jobDetailFactoryBean.setName("loginLogDailyBatchJob");
-    jobDetailFactoryBean.setDescription("loginLogDailyBatchJob");
+    jobDetailFactoryBean.setName("loginLogDailBatchJob");
+    jobDetailFactoryBean.setDescription("Daily login count");
 
     return jobDetailFactoryBean;
   }
@@ -70,12 +69,14 @@ public class QuartzConfiguration {
   public CronTriggerFactoryBean cronTriggerFactoryBean() {
     CronTriggerFactoryBean cronTriggerFactoryBean = new CronTriggerFactoryBean();
     cronTriggerFactoryBean.setJobDetail(jobDetailFactoryBean().getObject());
-    cronTriggerFactoryBean.setCronExpression("0 43 15 ? * *");
-    cronTriggerFactoryBean.setDescription("loginLogDailyBatchJob CronTriger");
+    // run every 10 seconds
+    cronTriggerFactoryBean.setCronExpression("*/10 * * * * ? *");
+    //cronTriggerFactoryBean.setCronExpression("0 28 17 ? * *");
+    cronTriggerFactoryBean.setDescription("loginLogDailBatchJob CronTriggerFactoryBean");
 
     return cronTriggerFactoryBean;
   }
-
+  
   public static SimpleTriggerFactoryBean simpleTriggerFactoryBean(JobDetail jobDetail, long pollFrequencyMs) {
     SimpleTriggerFactoryBean simpleTriggerFactoryBean = new SimpleTriggerFactoryBean();
     simpleTriggerFactoryBean.setJobDetail(jobDetail);
@@ -83,9 +84,9 @@ public class QuartzConfiguration {
     simpleTriggerFactoryBean.setRepeatInterval(pollFrequencyMs);
     simpleTriggerFactoryBean.setRepeatCount(SimpleTrigger.REPEAT_INDEFINITELY);
     simpleTriggerFactoryBean.setMisfireInstruction(SimpleTrigger.MISFIRE_INSTRUCTION_RESCHEDULE_NEXT_WITH_REMAINING_COUNT);
-
+    
     return simpleTriggerFactoryBean;
-  }
+}
 
   @Bean
   public SchedulerFactoryBean schedulerFactoryBean() {

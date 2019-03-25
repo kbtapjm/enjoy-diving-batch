@@ -27,11 +27,11 @@ import kr.co.pjm.diving.batch.configuration.web.interceptor.LoggingClientHttpReq
 
 @SpringBootApplication(scanBasePackages = { "kr.co.pjm.diving.batch" })
 public class Application extends SpringBootServletInitializer implements CommandLineRunner {
-  
+
   public static void main(String[] args) {
     SpringApplication.run(Application.class, args);
   }
-  
+
   @Override
   protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
     builder.sources(Application.class);
@@ -69,25 +69,22 @@ public class Application extends SpringBootServletInitializer implements Command
 
   @Bean
   public RestTemplate restTemplate(RestTemplateBuilder builder) {
-    RestTemplate restTemplate = builder
-        .setConnectTimeout(8 * 1000)
-        .setReadTimeout(8 * 1000)
-        .build();
-    
+    RestTemplate restTemplate = builder.setConnectTimeout(8 * 1000).setReadTimeout(8 * 1000).build();
+
     restTemplate.setInterceptors(Collections.singletonList(new LoggingClientHttpRequestInterceptor()));
-    
+
     return restTemplate;
   }
-  
-  @Bean 
-  public Jackson2ObjectMapperBuilder objectMapperBuilder() { 
-   Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder(); 
-   return builder.modulesToInstall(new JavaTimeModule()); 
+
+  @Bean
+  public Jackson2ObjectMapperBuilder objectMapperBuilder() {
+    Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder();
+    return builder.modulesToInstall(new JavaTimeModule());
   }
 
   @Override
   public void run(String... args) throws Exception {
     // CommandLineRunner
   }
-  
+
 }
