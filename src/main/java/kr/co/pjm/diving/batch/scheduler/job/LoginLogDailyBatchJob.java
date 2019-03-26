@@ -38,13 +38,13 @@ public class LoginLogDailyBatchJob extends QuartzJobBean implements Interruptabl
   protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
     JobKey key = jobExecutionContext.getJobDetail().getKey();
     
-    log.info("BillingJob Job started with key : " + key.getName() + ", Group :" + key.getGroup() + " " 
-    + ", Thread Name :" + Thread.currentThread().getName() + " ,Time now : " + LocalDateTime.now());
+    log.info("BillingJob Job started with key : " + key.getName() + ", Group : " + key.getGroup() + " " 
+    + ", Thread Name : " + Thread.currentThread().getName() + " ,Time now : " + LocalDateTime.now());
     
     try {
       JobParameters jobParameters = new JobParametersBuilder()
-          //.addLong("time", System.currentTimeMillis())
-          .addString("batchDate", DateUtil.getInstance().getLocalDateToString(1, DateUtil.FORMAT_YYYY_MM_DD))
+          .addLong("time", System.currentTimeMillis())
+          //.addString("batchDate", DateUtil.getInstance().getLocalDateToString(1, DateUtil.FORMAT_YYYY_MM_DD))
           .toJobParameters();
       
       Job job = jobLocator.getJob(jobName);

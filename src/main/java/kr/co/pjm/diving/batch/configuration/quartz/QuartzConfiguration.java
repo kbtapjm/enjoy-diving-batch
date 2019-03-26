@@ -70,7 +70,7 @@ public class QuartzConfiguration {
     CronTriggerFactoryBean cronTriggerFactoryBean = new CronTriggerFactoryBean();
     cronTriggerFactoryBean.setJobDetail(jobDetailFactoryBean().getObject());
     // run every 10 seconds
-    cronTriggerFactoryBean.setCronExpression("*/10 * * * * ? *");
+    cronTriggerFactoryBean.setCronExpression("*/20 * * * * ? *");
     //cronTriggerFactoryBean.setCronExpression("0 28 17 ? * *");
     cronTriggerFactoryBean.setDescription("loginLogDailBatchJob CronTriggerFactoryBean");
 
