@@ -11,6 +11,7 @@ import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
+import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.data.RepositoryItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +21,16 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.Sort;
 
 import kr.co.pjm.diving.common.domain.entity.UserLoginLog;
+import kr.co.pjm.diving.common.domain.entity.UserLoginLogDaily;
+import kr.co.pjm.diving.common.repository.UserLoginLogDailyRepasitory;
 import kr.co.pjm.diving.common.repository.UserLoginLogRepasitory;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Configuration
 @EnableBatchProcessing
-public class BatchConfiguration {
-
+public class LoginLogDailBatchJobConfiguraion {
+  
   @Autowired
   public JobBuilderFactory jobBuilderFactory;
 
@@ -36,23 +39,11 @@ public class BatchConfiguration {
 
   @Autowired
   private UserLoginLogRepasitory userLoginLogRepasitory;
-
-  // @Bean
-  // public CustomItemReader reader() {
-  // return new CustomItemReader();
-  // }
-  //
-  // @Bean
-  // public CustomItemWriter writer() {
-  // return new CustomItemWriter();
-  // }
-
-  // @Bean
-  // public Job loginLogDailBatchJob() {
-  // return
-  // jobBuilderFactory.get("loginLogDailBatchJob").start(loginLogDailBatchJobStep1(null))
-  // .next(loginLogDailBatchJobStep2(null)).build();
-  // }
+  
+  @Autowired
+  private UserLoginLogDailyRepasitory userLoginLogDailyRepasitory;
+  
+  private int chunkSize = 2;
 
   @Bean
   public Job loginLogDailBatchJob() {
@@ -66,7 +57,7 @@ public class BatchConfiguration {
   @Bean
   public Step loginLogDailBatchJobStep() {
     return stepBuilderFactory.get("loginLogDailBatchJobStep")
-        .<Object, Object>chunk(10)
+        .<Object, Object>chunk(chunkSize)
         .reader(reader(null))
         .writer(writer())
         .build();
@@ -74,57 +65,35 @@ public class BatchConfiguration {
 
   @Bean
   @StepScope
-  public RepositoryItemReader<UserLoginLog> reader(@Value("#{jobParameters[time]}") Long time) {
-    log.info("===============> time : {}", time);
-    
+  public RepositoryItemReader<UserLoginLog> reader(@Value("#{jobParameters[batchDate]}") String batchDate) {
     RepositoryItemReader<UserLoginLog> reader = new RepositoryItemReader<>();
     reader.setRepository(userLoginLogRepasitory);
     reader.setMethodName("findByLoginDate");
     
     List<Object> arguments = new ArrayList<>();
-    arguments.add("2019-03-26");
+    arguments.add(batchDate);
     reader.setArguments(arguments);
-    
     reader.setSort(Collections.singletonMap("email", Sort.Direction.ASC));
-
+    
     return reader;
   }
-
+  
   @Bean
   @StepScope
   public ItemWriter<? super Object> writer() {
     return items -> {
       for (Object obj : items) {
         UserLoginLog userLoginLog = (UserLoginLog) obj;
-        log.info("userLoginLog : {}, {}", userLoginLog.getEmail(), userLoginLog.getLoginDateTime());
+        
+        UserLoginLogDaily userLoginLogDaily = UserLoginLogDaily.builder()
+            .user(userLoginLog.getUser())
+            .loginCount(userLoginLog.getLoginCount())
+            .loginDate(userLoginLog.getLoginDate())
+            .build();
+        
+        userLoginLogDailyRepasitory.save(userLoginLogDaily);
       }
     };
   }
-
-  // @Bean
-  // @JobScope
-  // public Step loginLogDailBatchJobStep1(@Value("#{jobParameters[batchDate]}")
-  // String batchDate) {
-  // return stepBuilderFactory.get("billingStep1").tasklet((contribution,
-  // chunkContext) -> {
-  // log.info(">>>>> This is Step1");
-  // log.info(">>>>> batchDate = {}", batchDate);
-  //
-  // return RepeatStatus.FINISHED;
-  // }).build();
-  // }
-  //
-  // @Bean
-  // @JobScope
-  // public Step loginLogDailBatchJobStep2(@Value("#{jobParameters[batchDate]}")
-  // String batchDate) {
-  // return stepBuilderFactory.get("billingStep2").tasklet((contribution,
-  // chunkContext) -> {
-  // log.info(">>>>> This is Step2");
-  // log.info(">>>>> batchDate = {}", batchDate);
-  //
-  // return RepeatStatus.FINISHED;
-  // }).build();
-  // }
 
 }

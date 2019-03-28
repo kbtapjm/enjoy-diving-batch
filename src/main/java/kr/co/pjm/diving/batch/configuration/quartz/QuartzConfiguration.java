@@ -5,8 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import org.quartz.JobDetail;
-import org.quartz.SimpleTrigger;
 import org.springframework.batch.core.configuration.JobLocator;
 import org.springframework.batch.core.configuration.JobRegistry;
 import org.springframework.batch.core.configuration.support.JobRegistryBeanPostProcessor;
@@ -19,7 +17,6 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
 import org.springframework.scheduling.quartz.JobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
-import org.springframework.scheduling.quartz.SimpleTriggerFactoryBean;
 
 import kr.co.pjm.diving.batch.scheduler.job.LoginLogDailyBatchJob;
 import kr.co.pjm.diving.batch.scheduler.listener.JobsListener;
@@ -69,15 +66,14 @@ public class QuartzConfiguration {
   public CronTriggerFactoryBean cronTriggerFactoryBean() {
     CronTriggerFactoryBean cronTriggerFactoryBean = new CronTriggerFactoryBean();
     cronTriggerFactoryBean.setJobDetail(jobDetailFactoryBean().getObject());
-    // run every 10 seconds
-    cronTriggerFactoryBean.setCronExpression("*/20 * * * * ? *");
-    //cronTriggerFactoryBean.setCronExpression("0 28 17 ? * *");
+    //cronTriggerFactoryBean.setCronExpression("*/20 * * * * ? *");
+    cronTriggerFactoryBean.setCronExpression("0 34 17 ? * *");
     cronTriggerFactoryBean.setDescription("loginLogDailBatchJob CronTriggerFactoryBean");
 
     return cronTriggerFactoryBean;
   }
   
-  public static SimpleTriggerFactoryBean simpleTriggerFactoryBean(JobDetail jobDetail, long pollFrequencyMs) {
+  /*public static SimpleTriggerFactoryBean simpleTriggerFactoryBean(JobDetail jobDetail, long pollFrequencyMs) {
     SimpleTriggerFactoryBean simpleTriggerFactoryBean = new SimpleTriggerFactoryBean();
     simpleTriggerFactoryBean.setJobDetail(jobDetail);
     simpleTriggerFactoryBean.setStartDelay(0L);
@@ -86,7 +82,7 @@ public class QuartzConfiguration {
     simpleTriggerFactoryBean.setMisfireInstruction(SimpleTrigger.MISFIRE_INSTRUCTION_RESCHEDULE_NEXT_WITH_REMAINING_COUNT);
     
     return simpleTriggerFactoryBean;
-}
+  }*/
 
   @Bean
   public SchedulerFactoryBean schedulerFactoryBean() {
