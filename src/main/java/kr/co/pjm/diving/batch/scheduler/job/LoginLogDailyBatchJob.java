@@ -28,7 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Getter
 @Setter
-public class LoginLogDailyBatchJob extends QuartzJobBean implements InterruptableJob{
+public class LoginLogDailyBatchJob extends QuartzJobBean implements InterruptableJob {
   private volatile boolean toStopFlag = true;
   private String jobName;
   private JobLauncher jobLauncher;
@@ -42,20 +42,19 @@ public class LoginLogDailyBatchJob extends QuartzJobBean implements Interruptabl
     + ", Thread Name : " + Thread.currentThread().getName() + " ,Time now : " + LocalDateTime.now());
     
     try {
-      log.info("### batchDate : {}", DateUtil.getInstance().getLocalDateToString(2, DateUtil.FORMAT_YYYY_MM_DD));
-      
+      log.info("#############################################################################");
       JobParameters jobParameters = new JobParametersBuilder()
-          .addString("batchDate", DateUtil.getInstance().getLocalDateToString(2, DateUtil.FORMAT_YYYY_MM_DD))
+          .addString("batchDate", DateUtil.getInstance().getLocalDateToString(1, DateUtil.FORMAT_YYYY_MM_DD))
           .toJobParameters();
       
       Job job = jobLocator.getJob(jobName);
-      log.info("########### LoginLogDailyBatchJob Name : {} ", job.getName());
       JobExecution jobExecution = jobLauncher.run(job, jobParameters);
-      log.info("########### LoginLogDailyBatchJob Status: {}", jobExecution.getStatus());
-
+      log.info("======> LoginLogDailyBatchJob Status: {}, End Time : {}", jobExecution.getStatus(), jobExecution.getEndTime());
+      log.info("#############################################################################");
     } catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException
         | JobParametersInvalidException | NoSuchJobException e) {
       e.printStackTrace();
+      log.error("Error : {}", e);
     }
   }
 

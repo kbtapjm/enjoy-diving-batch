@@ -16,9 +16,11 @@ spring:
   http:
     encoding:
       charset: UTF-8
+  batch:    job:      enabled: false
 security:
   basic:
     enabled: false
+
 
 ---
 # local

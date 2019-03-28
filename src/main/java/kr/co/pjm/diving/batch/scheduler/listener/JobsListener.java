@@ -18,17 +18,17 @@ public class JobsListener implements JobListener {
 
   @Override
   public void jobToBeExecuted(JobExecutionContext arg0) {
-    log.info("### JobsListener.jobToBeExecuted()");
+    log.info("%%% JobsListener.jobToBeExecuted()");
   }
 
   @Override
   public void jobExecutionVetoed(JobExecutionContext arg0) {
-    log.info("### JobsListener.jobExecutionVetoed()");
+    log.info("%%% JobsListener.jobExecutionVetoed()");
   }
 
   @Override
   public void jobWasExecuted(JobExecutionContext arg0, JobExecutionException arg1) {
-    log.info("### JobsListener.jobWasExecuted()");
+    log.info("%%% JobsListener.jobWasExecuted()");
   }
 
 }

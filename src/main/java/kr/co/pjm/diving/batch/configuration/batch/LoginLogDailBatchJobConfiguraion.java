@@ -67,6 +67,10 @@ public class LoginLogDailBatchJobConfiguraion {
   @Bean
   @StepScope
   public RepositoryItemReader<UserLoginLog> reader(@Value("#{jobParameters[batchDate]}") String batchDate) {
+    if (log.isInfoEnabled()) {
+      log.info("===> batchDate : {}", batchDate);
+    }
+    
     RepositoryItemReader<UserLoginLog> reader = new RepositoryItemReader<>();
     reader.setRepository(userLoginLogRepasitory);
     reader.setMethodName("findByLoginDate");
@@ -83,7 +87,6 @@ public class LoginLogDailBatchJobConfiguraion {
   @StepScope
   public ItemProcessor<Object, ? super Object> processor() {
     return item -> {
-      log.info("item : {}", item);
       return item;
     };
   }
