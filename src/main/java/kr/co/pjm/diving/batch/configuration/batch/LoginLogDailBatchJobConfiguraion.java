@@ -59,6 +59,7 @@ public class LoginLogDailBatchJobConfiguraion {
     return stepBuilderFactory.get("loginLogDailBatchJobStep")
         .<Object, Object>chunk(chunkSize)
         .reader(reader(null))
+        .processor(processor())
         .writer(writer())
         .build();
   }
@@ -77,6 +78,16 @@ public class LoginLogDailBatchJobConfiguraion {
     
     return reader;
   }
+  
+  @Bean
+  @StepScope
+  public ItemProcessor<Object, ? super Object> processor() {
+    return item -> {
+      log.info("item : {}", item);
+      return item;
+    };
+  }
+
   
   @Bean
   @StepScope

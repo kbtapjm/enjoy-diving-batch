@@ -67,7 +67,7 @@ public class QuartzConfiguration {
     CronTriggerFactoryBean cronTriggerFactoryBean = new CronTriggerFactoryBean();
     cronTriggerFactoryBean.setJobDetail(jobDetailFactoryBean().getObject());
     //cronTriggerFactoryBean.setCronExpression("*/20 * * * * ? *");
-    cronTriggerFactoryBean.setCronExpression("0 34 17 ? * *");
+    cronTriggerFactoryBean.setCronExpression("0 00 18 ? * *");
     cronTriggerFactoryBean.setDescription("loginLogDailBatchJob CronTriggerFactoryBean");
 
     return cronTriggerFactoryBean;
