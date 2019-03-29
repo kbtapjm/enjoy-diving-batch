@@ -107,7 +107,7 @@ public class JobServiceImpl implements JobService {
         System.out.println("Request received for deleting job.");
 
         String jobKey = jobName;
-        String groupKey = "billingGroup";
+        String groupKey = "enjoy-diving-batch";
 
         JobKey jkey = new JobKey(jobKey, groupKey); 
         System.out.println("Parameters received for deleting job : jobKey :"+jobKey);
@@ -154,7 +154,7 @@ public class JobServiceImpl implements JobService {
         
         try {
             String jobKey = jobName;
-            String groupKey = "billingGroup";
+            String groupKey = "enjoy-diving-batch";
 
             List<JobExecutionContext> currentJobs = schedulerFactoryBean.getScheduler().getCurrentlyExecutingJobs();
             if (currentJobs != null) {
@@ -178,7 +178,7 @@ public class JobServiceImpl implements JobService {
     private String getJobState(String jobName) {
 
         try {
-            String groupKey = "billingGroup";
+            String groupKey = "enjoy-diving-batch";
             JobKey jobKey = new JobKey(jobName, groupKey);
 
             Scheduler scheduler = schedulerFactoryBean.getScheduler();

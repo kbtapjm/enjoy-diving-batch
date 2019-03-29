@@ -44,7 +44,7 @@ public class LoginLogDailyBatchJob extends QuartzJobBean implements Interruptabl
     try {
       log.info("#############################################################################");
       JobParameters jobParameters = new JobParametersBuilder()
-          .addString("batchDate", DateUtil.getInstance().getLocalDateToString(1, DateUtil.FORMAT_YYYY_MM_DD))
+          .addString("batchDate", DateUtil.getInstance().getLocalDateToString(0, DateUtil.FORMAT_YYYY_MM_DD))
           .toJobParameters();
       
       Job job = jobLocator.getJob(jobName);

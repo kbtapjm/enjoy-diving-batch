@@ -3,6 +3,9 @@ package kr.co.pjm.diving.batch;
 import java.nio.charset.Charset;
 import java.util.Collections;
 
+import org.quartz.SchedulerException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,11 +18,13 @@ import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletCon
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.context.SmartLifecycle;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
@@ -89,6 +94,58 @@ public class Application extends SpringBootServletInitializer implements Command
   @Override
   public void run(String... args) throws Exception {
     // CommandLineRunner
+  }
+
+  @Bean
+  public SmartLifecycle gracefulShutdownHookForQuartz(SchedulerFactoryBean schedulerFactoryBean) {
+    return new SmartLifecycle() {
+      private boolean isRunning = false;
+      private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+      @Override
+      public boolean isAutoStartup() {
+        return true;
+      }
+
+      @Override
+      public void stop(Runnable callback) {
+        stop();
+        logger.info("Spring container is shutting down.");
+        callback.run();
+      }
+
+      @Override
+      public void start() {
+        logger.info("Quartz Graceful Shutdown Hook started.");
+        isRunning = true;
+      }
+
+      @Override
+      public void stop() {
+        isRunning = false;
+        try {
+          logger.info("Quartz Graceful Shutdown... ");
+          schedulerFactoryBean.destroy();
+        } catch (SchedulerException e) {
+          try {
+            logger.info("Error shutting down Quartz: " + e.getMessage(), e);
+            schedulerFactoryBean.getScheduler().shutdown(false);
+          } catch (SchedulerException ex) {
+            logger.error("Unable to shutdown the Quartz scheduler.", ex);
+          }
+        }
+      }
+
+      @Override
+      public boolean isRunning() {
+        return isRunning;
+      }
+
+      @Override
+      public int getPhase() {
+        return Integer.MAX_VALUE;
+      }
+    };
   }
 
 }

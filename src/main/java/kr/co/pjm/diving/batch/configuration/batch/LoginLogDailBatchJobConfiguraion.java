@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobExecutionListener;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -20,6 +21,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.Sort;
 
+import kr.co.pjm.diving.batch.scheduler.batch.listener.LoginLogDailBatchJobListener;
 import kr.co.pjm.diving.common.domain.entity.UserLoginLog;
 import kr.co.pjm.diving.common.domain.entity.UserLoginLogDaily;
 import kr.co.pjm.diving.common.repository.UserLoginLogDailyRepasitory;
@@ -43,12 +45,13 @@ public class LoginLogDailBatchJobConfiguraion {
   @Autowired
   private UserLoginLogDailyRepasitory userLoginLogDailyRepasitory;
   
-  private int chunkSize = 2;
+  private int chunkSize = 5;
 
   @Bean
   public Job loginLogDailBatchJob() {
     return jobBuilderFactory.get("loginLogDailBatchJob")
         .incrementer(new RunIdIncrementer())
+        .listener(listener())
         .flow(loginLogDailBatchJobStep())
         .end()
         .build();
@@ -67,10 +70,6 @@ public class LoginLogDailBatchJobConfiguraion {
   @Bean
   @StepScope
   public RepositoryItemReader<UserLoginLog> reader(@Value("#{jobParameters[batchDate]}") String batchDate) {
-    if (log.isInfoEnabled()) {
-      log.info("===> batchDate : {}", batchDate);
-    }
-    
     RepositoryItemReader<UserLoginLog> reader = new RepositoryItemReader<>();
     reader.setRepository(userLoginLogRepasitory);
     reader.setMethodName("findByLoginDate");
@@ -108,6 +107,11 @@ public class LoginLogDailBatchJobConfiguraion {
         userLoginLogDailyRepasitory.save(userLoginLogDaily);
       }
     };
+  }
+  
+  @Bean
+  public JobExecutionListener listener() {
+    return new LoginLogDailBatchJobListener();
   }
 
 }
